@@ -1,4 +1,7 @@
+from database.log_to_db import log_to_db
+
 def message_to_support(bot, message):
+    log_to_db(message, 'message_to_support', 'Сообщение от пользователя')
     if message.text == 'Назад':
         from functions.start import start
         start(bot, message)
